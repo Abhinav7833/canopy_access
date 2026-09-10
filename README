@@ -1,0 +1,14 @@
+# Canopy
+
+Canopy is a green finance intelligence platform.
+
+The project uses satellite imagery and AI to help monitor environmental change, verify sustainability projects, and generate climate-related insights.
+
+## Project structure
+
+canopy/
+├── frontend/      # React web application
+├── backend/       # FastAPI or Flask backend
+├── geospatial/    # Satellite imagery and scientific pipeline
+├── docs/          # Architecture, API notes, JSON schema
+└── README.md

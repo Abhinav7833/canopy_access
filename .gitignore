@@ -1,0 +1,44 @@
+# Claude Code local config (vision docs, skills, hooks, settings) — not versioned
+.claude/*
+
+# Internal docs (original project convention)
+DOC/
+
+# Office/Word temp lock files
+~$*
+
+# Generated demo assets (recreated by scripts/seed.py)
+seed_data/assets/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Node / Next.js
+node_modules/
+.next/
+dist/
+*.tsbuildinfo
+
+# Env / secrets
+.env
+*credentials*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Playwright MCP scratch (screenshots / snapshots from browser QA)
+.playwright-mcp/
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
