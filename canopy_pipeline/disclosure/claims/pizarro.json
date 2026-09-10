@@ -1,0 +1,16 @@
+{
+  "asset_id": "pizarro",
+  "name": "Francisco Pizarro Solar Farm",
+  "asset_type": "solar_pv",
+  "region": "Cáceres, Extremadura, Spain",
+  "country": "Spain",
+  "developer": "Iberdrola",
+  "claims": {
+    "capacity_mwp":        {"value": 590,      "unit": "MWp",     "source": "Iberdrola start-up release (Aug 2022)",        "source_url": "TODO-confirm"},
+    "area_ha":             {"value": 1300,     "unit": "ha",      "source": "NS Energy project profile",                    "source_url": "TODO-confirm"},
+    "financing_date":      {"value": "2019",   "unit": "year",    "source": "green PPA (Danone/Bayer/PepsiCo)",             "source_url": "TODO-confirm"},
+    "operational_date":    {"value": "2022-08",                   "source": "Iberdrola",                                    "source_url": "TODO-confirm"},
+    "build_phased_through":{"value": "2023",                      "source": "Phase III EIA BOE-A-2023-5247",                "source_url": "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2023-5247"},
+    "co2_avoided_tpy":     {"value": 150000,   "unit": "tCO2/yr", "source": "Iberdrola",                                    "source_url": "TODO-confirm"}
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "asset_id": "nunez",
+  "name": "Núñez de Balboa Solar Farm",
+  "asset_type": "solar_pv",
+  "region": "Badajoz, Extremadura, Spain",
+  "country": "Spain",
+  "developer": "Iberdrola",
+  "claims": {
+    "capacity_mwp":        {"value": 500,     "unit": "MWp",     "source": "Iberdrola",                                        "source_url": "TODO-confirm"},
+    "capacity_mwac":       {"value": 391,     "unit": "MWac",    "source": "Iberdrola",                                        "source_url": "TODO-confirm"},
+    "area_ha":             {"value": 900,     "unit": "ha", "range": [854, 1000], "source": "project profile",                "source_url": "TODO-confirm"},
+    "financing_date":      {"value": "2019",  "unit": "year",    "source": "EIB Green Loan 20180584 (€145m) + ICO (€140m)",    "source_url": "https://www.eib.org/en/projects/pipelines/all/20180584"},
+    "operational_date":    {"value": "2020-04",                  "source": "grid export",                                      "source_url": "TODO-confirm"},
+    "generation_gwh_yr":   {"value": 832,     "unit": "GWh/yr",  "source": "Iberdrola",                                        "source_url": "TODO-confirm"},
+    "co2_avoided_tpy":     {"value": 215000,  "unit": "tCO2/yr", "source": "Iberdrola",                                        "source_url": "TODO-confirm"},
+    "disputed_parcel_ha":  {"value": 525,     "unit": "ha",      "source": "court order 2022-06 (order to return land)",       "source_url": "TODO-confirm"}
+  }
+}

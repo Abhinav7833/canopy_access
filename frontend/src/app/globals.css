@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* ------------------------------------------------------------------ *
+ * Canopy design system — green identity, light + dark parity.
+ * Palette lives in runtime --c-* vars; @theme maps --color-* to them
+ * so Tailwind utilities flip with the theme. Green-biased neutrals,
+ * one deep-emerald accent, semantic risk ramp.
+ * ------------------------------------------------------------------ */
+
+/* light (default) */
+:root {
+  --c-canvas:#f2f5f2; --c-surface:#ffffff; --c-surface-muted:#f7faf7;
+  /* --c-ink-2: reserved for Phase B secondary text (not yet consumed) */
+  --c-ink:#0d1712; --c-ink-2:#38473f; --c-muted:#5c7167; --c-faint:#708577;
+  --c-border:#e4e9e5; --c-border-strong:#d4ddd7;
+  --c-accent:#0a7c4c; --c-accent-hover:#086b41; --c-accent-soft:#e8f5ee; --c-accent-border:#b7e4cd; --c-accent-ink:#ffffff;
+  --c-risk-low:#0a7c4c; --c-risk-low-soft:#e8f5ee; --c-risk-low-border:#b7e4cd;
+  --c-risk-med:#b45309; --c-risk-med-soft:#fbf1e4; --c-risk-med-border:#f0d6a6;
+  --c-risk-high:#b42318; --c-risk-high-soft:#fbeeec; --c-risk-high-border:#f2cbc6;
+  --c-risk-critical:#7a271a;
+  --c-map-bg:#eef1f5;
+  --shadow-card:0 1px 2px rgba(13,23,18,.05);
+  --shadow-raised:0 14px 34px -14px rgba(13,23,18,.16);
+  --shadow-overlay:0 20px 40px -12px rgba(13,23,18,.22);
+  /* --glow: reserved for Phase B confidence-rating glow (dark only; not yet consumed) */
+  --glow:none;
+  /* Which brand lockup is visible. Carried as a variable so the theme blocks stay the one
+     place a theme is defined, instead of a fourth selector that could fall out of step. */
+  --brand-on-light:block; --brand-on-dark:none;
+  color-scheme:light;
+}
+
+/* Dark values, applied when the OS prefers dark and the user has not chosen
+   light, and again for the explicit-dark root (so the toggle always wins).
+   NOTE: this block is intentionally byte-identical to the :root[data-theme="dark"]
+   block below — keep both in sync. */
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --c-canvas:#0a0f0d; --c-surface:#111814; --c-surface-muted:#0e1512;
+    --c-ink:#e9efe9; --c-ink-2:#b7c4bc; --c-muted:#8ba095; --c-faint:#697c72;
+    --c-border:#202b25; --c-border-strong:#2c3b33;
+    --c-accent:#31c07a; --c-accent-hover:#46d18c; --c-accent-soft:rgba(49,192,122,.13); --c-accent-border:rgba(49,192,122,.32); --c-accent-ink:#04140c;
+    --c-risk-low:#31c07a; --c-risk-low-soft:rgba(49,192,122,.13); --c-risk-low-border:rgba(49,192,122,.32);
+    --c-risk-med:#e0922f; --c-risk-med-soft:rgba(224,146,47,.13); --c-risk-med-border:rgba(224,146,47,.30);
+    --c-risk-high:#e5645a; --c-risk-high-soft:rgba(229,100,90,.13); --c-risk-high-border:rgba(229,100,90,.30);
+    --c-risk-critical:#f0857a;
+    --c-map-bg:#0e1512;
+    --shadow-card:0 1px 2px rgba(0,0,0,.4);
+    --shadow-raised:0 18px 44px -18px rgba(0,0,0,.62);
+    --shadow-overlay:0 24px 48px -14px rgba(0,0,0,.7);
+    --glow:0 0 34px rgba(49,192,122,.14);
+    --brand-on-light:none; --brand-on-dark:block;
+    color-scheme:dark;
+  }
+}
+/* NOTE: intentionally byte-identical to the @media (prefers-color-scheme: dark)
+   block above — keep both in sync. */
+:root[data-theme="dark"] {
+  --c-canvas:#0a0f0d; --c-surface:#111814; --c-surface-muted:#0e1512;
+  --c-ink:#e9efe9; --c-ink-2:#b7c4bc; --c-muted:#8ba095; --c-faint:#697c72;
+  --c-border:#202b25; --c-border-strong:#2c3b33;
+  --c-accent:#31c07a; --c-accent-hover:#46d18c; --c-accent-soft:rgba(49,192,122,.13); --c-accent-border:rgba(49,192,122,.32); --c-accent-ink:#04140c;
+  --c-risk-low:#31c07a; --c-risk-low-soft:rgba(49,192,122,.13); --c-risk-low-border:rgba(49,192,122,.32);
+  --c-risk-med:#e0922f; --c-risk-med-soft:rgba(224,146,47,.13); --c-risk-med-border:rgba(224,146,47,.30);
+  --c-risk-high:#e5645a; --c-risk-high-soft:rgba(229,100,90,.13); --c-risk-high-border:rgba(229,100,90,.30);
+  --c-risk-critical:#f0857a;
+  --c-map-bg:#0e1512;
+  --shadow-card:0 1px 2px rgba(0,0,0,.4);
+  --shadow-raised:0 18px 44px -18px rgba(0,0,0,.62);
+  --shadow-overlay:0 24px 48px -14px rgba(0,0,0,.7);
+  --glow:0 0 34px rgba(49,192,122,.14);
+  --brand-on-light:none; --brand-on-dark:block;
+  color-scheme:dark;
+}
+
+@theme {
+  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SF Mono", monospace;
+
+  --color-canvas: var(--c-canvas);
+  --color-surface: var(--c-surface);
+  --color-surface-muted: var(--c-surface-muted);
+  --color-border: var(--c-border);
+  --color-border-strong: var(--c-border-strong);
+  --color-ink: var(--c-ink);
+  --color-ink-2: var(--c-ink-2);
+  --color-muted: var(--c-muted);
+  --color-faint: var(--c-faint);
+  --color-accent: var(--c-accent);
+  --color-accent-hover: var(--c-accent-hover);
+  --color-accent-soft: var(--c-accent-soft);
+  --color-accent-border: var(--c-accent-border);
+  --color-accent-ink: var(--c-accent-ink);
+  --color-risk-low: var(--c-risk-low);
+  --color-risk-low-soft: var(--c-risk-low-soft);
+  --color-risk-low-border: var(--c-risk-low-border);
+  --color-risk-med: var(--c-risk-med);
+  --color-risk-med-soft: var(--c-risk-med-soft);
+  --color-risk-med-border: var(--c-risk-med-border);
+  --color-risk-high: var(--c-risk-high);
+  --color-risk-high-soft: var(--c-risk-high-soft);
+  --color-risk-high-border: var(--c-risk-high-border);
+  --color-risk-critical: var(--c-risk-critical);
+
+  --radius-card: 12px;
+  /* shadows: unlayered :root literals above win over this layered self-ref (Tailwind cascade-layer precedence) */
+  --shadow-card: var(--shadow-card);
+  --shadow-raised: var(--shadow-raised);
+  --shadow-overlay: var(--shadow-overlay);
+}
+
+html {
+  background: var(--color-canvas);
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  transition: background .25s ease, color .25s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+}
+
+/* Tabular figures for all numeric/data contexts. */
+.tnum,
+table,
+.font-mono {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+/* Uppercase micro-labels used across headers / tables / stat tiles. */
+.label {
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-faint);
+}
+
+/* The brand lockup ships as two artworks — the wordmark and the mark's green are tuned per
+   background — so the theme picks one rather than recolouring either. */
+.brand-on-light { display: var(--brand-on-light); }
+.brand-on-dark { display: var(--brand-on-dark); }
+
+::selection {
+  background: var(--color-accent-soft);
+}

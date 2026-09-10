@@ -1,0 +1,405 @@
+{
+  "id": "nur_navoi_solar",
+  "name": "Nur Navoi Solar (100 MW), Uzbekistan",
+  "asset_type": "solar",
+  "country": "Uzbekistan",
+  "financing_type": "development_finance",
+  "monitoring_objective": "Turn the issuer's self-reported allocation and impact into independently observed evidence.",
+  "status": "monitored",
+  "screening_status": "Partially consistent",
+  "aoi_coords": [
+    [
+      64.978,
+      40.104
+    ],
+    [
+      64.994,
+      40.104
+    ],
+    [
+      64.994,
+      40.12
+    ],
+    [
+      64.978,
+      40.12
+    ],
+    [
+      64.978,
+      40.104
+    ]
+  ],
+  "area_hectares": 264.0,
+  "disclosure": {
+    "title": "Nur Navoi Solar (100 MW): Self-Reported Green/SDG Allocation & Impact",
+    "issuer": "Masdar (Nur Navoi Solar FE LLC) / Government of Uzbekistan",
+    "instrument": "Development finance (use-of-proceeds); issuer self-reported SDG & impact figures",
+    "financing_date": "2020-12-01",
+    "doc_ref": "nur_navoi_impact_report_2022.pdf#s3",
+    "region_hint": "Navoi region, Uzbekistan",
+    "summary": "Issuer-reported allocation and impact for a 100 MW utility-scale solar PV plant financed by ADB, EBRD and World Bank-IFC. Capacity, generation and CO2-avoided figures are self-reported with only limited (paper) assurance and were never physically verified.",
+    "trace": {
+      "source": "nur_navoi_impact_report_2022.pdf",
+      "date": "2022-04-01",
+      "method": "Document extraction",
+      "confidence": "medium",
+      "traces_to": "disclosure"
+    }
+  },
+  "claims": [
+    {
+      "id": "claim_capacity_mw",
+      "kind": "capacity_mw",
+      "promised": 100,
+      "unit": "MW",
+      "source_span": "\"...nameplate capacity of 100 MW...\" (impact report p.4)",
+      "trace": {
+        "source": "nur_navoi_impact_report_2022.pdf",
+        "date": "2022-04-01",
+        "method": "Document extraction",
+        "confidence": "high",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "id": "claim_generation_gwh",
+      "kind": "generation_gwh",
+      "promised": 270,
+      "unit": "GWh/yr",
+      "source_span": "\"...expected annual generation of approximately 270 GWh...\" (impact report p.5)",
+      "trace": {
+        "source": "nur_navoi_impact_report_2022.pdf",
+        "date": "2022-04-01",
+        "method": "Document extraction",
+        "confidence": "medium",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "id": "claim_co2_avoided_tpy",
+      "kind": "co2_avoided_tpy",
+      "promised": 156000,
+      "unit": "tCO2e/yr",
+      "source_span": "\"...avoiding around 156,000 tonnes of CO2 per year...\" (impact report p.5)",
+      "trace": {
+        "source": "nur_navoi_impact_report_2022.pdf",
+        "date": "2022-04-01",
+        "method": "Document extraction",
+        "confidence": "medium",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "id": "claim_area_ha",
+      "kind": "area_ha",
+      "promised": 240,
+      "unit": "ha",
+      "source_span": "\"...site area of approximately 240 hectares...\" (impact report p.6)",
+      "trace": {
+        "source": "nur_navoi_impact_report_2022.pdf",
+        "date": "2022-04-01",
+        "method": "Document extraction",
+        "confidence": "medium",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "id": "claim_cod_date",
+      "kind": "cod_date",
+      "promised": "2021-08-01",
+      "unit": "date",
+      "source_span": "\"...commercial operation reached in August 2021...\" (impact report p.6)",
+      "trace": {
+        "source": "nur_navoi_impact_report_2022.pdf",
+        "date": "2022-04-01",
+        "method": "Document extraction",
+        "confidence": "medium",
+        "traces_to": "disclosure"
+      }
+    }
+  ],
+  "localization": {
+    "region_hint": "Navoi region, Uzbekistan",
+    "located_centroid": [
+      64.986,
+      40.112
+    ],
+    "confidence": 0.92,
+    "method": "Region hint reconciled with the published site boundary and Sentinel-2 imagery of the AOI.",
+    "alternatives_rejected": [
+      {
+        "name": "Sherabad Solar (Surxondaryo region)",
+        "reason": "Masdar sister plant ~500 km south; different region and scale than the disclosure"
+      }
+    ],
+    "trace": {
+      "source": "Region hint, published site boundary, Sentinel-2 imagery",
+      "date": "2026-07-13",
+      "method": "Boundary reconciliation",
+      "confidence": "medium",
+      "traces_to": "disclosure"
+    },
+    "aoi_assurance": "Digitised footprint from the published site boundary, not a box drawn round a point.",
+    "has_footprint": true
+  },
+  "observation_series": [
+    {
+      "date": "2019-04-01",
+      "image_key": null,
+      "footprint_ha": 0,
+      "ndvi": 0.22,
+      "note": "Pre-construction baseline: bare desert terrain, no panel structures.",
+      "trace": {
+        "source": "Sentinel-2 + Sentinel-1",
+        "date": "2019-04-01",
+        "method": "AOI snapshot",
+        "confidence": "medium",
+        "traces_to": "claim_area_ha"
+      }
+    },
+    {
+      "date": "2021-03-15",
+      "image_key": null,
+      "footprint_ha": 180,
+      "ndvi": 0.14,
+      "note": "Construction well advanced; panel rows across most of the AOI ahead of the Aug 2021 target.",
+      "trace": {
+        "source": "Sentinel-2 + Sentinel-1",
+        "date": "2021-03-15",
+        "method": "AOI snapshot",
+        "confidence": "medium",
+        "traces_to": "claim_area_ha"
+      }
+    },
+    {
+      "date": "2021-09-15",
+      "image_key": null,
+      "footprint_ha": 264.0,
+      "ndvi": 0.11,
+      "note": "Panel footprint measured from the OSM plant polygon (way 1105486434) at ~264 ha, +10% vs the disclosed ~240 ha. Operational as of Aug 2021 (Sentinel-1 backscatter +1.2 dB).",
+      "trace": {
+        "source": "Sentinel-2 + Sentinel-1",
+        "date": "2021-09-15",
+        "method": "AOI snapshot",
+        "confidence": "medium",
+        "traces_to": "claim_area_ha"
+      }
+    }
+  ],
+  "cross_check": [
+    {
+      "claim_id": "claim_area_ha",
+      "observed": 264.0,
+      "status": "consistent",
+      "variance": "~+10% vs disclosed 240 ha (measured OSM plant footprint, way 1105486434)",
+      "evidence_ids": [
+        "nur_navoi_solar_ev_0"
+      ],
+      "trace": {
+        "source": "observation_series[2] + evidence nur_navoi_solar_ev_0",
+        "date": "2021-09-15",
+        "method": "Footprint analysis",
+        "confidence": "high",
+        "traces_to": "claim_area_ha"
+      }
+    },
+    {
+      "claim_id": "claim_cod_date",
+      "observed": "Full panel field energized in imagery by Sep 2021; on-time commissioning confirmed.",
+      "status": "consistent",
+      "variance": "on time vs promised Aug 2021",
+      "evidence_ids": [
+        "nur_navoi_solar_ev_0"
+      ],
+      "trace": {
+        "source": "observation_series[2] + evidence nur_navoi_solar_ev_0",
+        "date": "2021-09-15",
+        "method": "Footprint analysis",
+        "confidence": "medium",
+        "traces_to": "claim_cod_date"
+      }
+    },
+    {
+      "claim_id": "claim_generation_gwh",
+      "observed": "Modelled 149-194 GWh/yr (PVWatts + ERA5 GHI); conservative vs self-reported ~270 GWh.",
+      "status": "partially_consistent",
+      "variance": "modelled estimate below self-report (conservative)",
+      "evidence_ids": [
+        "nur_navoi_solar_ev_0"
+      ],
+      "trace": {
+        "source": "observation_series[2] + evidence nur_navoi_solar_ev_0",
+        "date": "2021-09-15",
+        "method": "Generation proxy",
+        "confidence": "low",
+        "traces_to": "claim_generation_gwh"
+      }
+    },
+    {
+      "claim_id": "claim_co2_avoided_tpy",
+      "observed": "Modelled 82,000-107,000 tCO2/yr (our conservative estimate: generation x Uzbekistan grid factor 0.551). Below the self-reported 156,000 - the gap is largely the grid-factor choice, not over-reporting.",
+      "status": "partially_consistent",
+      "variance": "reported 156k sits above our conservative modelled band (grid-factor-driven)",
+      "evidence_ids": [
+        "nur_navoi_solar_ev_0"
+      ],
+      "trace": {
+        "source": "PVWatts generation x UNFCCC grid factor 0.551 (modelled)",
+        "date": "2021-09-15",
+        "method": "Avoided-emissions estimate",
+        "confidence": "low",
+        "traces_to": "claim_co2_avoided_tpy"
+      }
+    }
+  ],
+  "confidence": {
+    "on_track_pct": 87,
+    "rationale": "Satellite is the sole source. Sentinel-1 shows a +1.2 dB backscatter rise 2019->2024 (structures / operation), consistent with commissioning in 2021 after 2020 financing - additionality consistent. Generation and avoided-CO2 are conservative PVWatts estimates from ERA5 GHI (1,869 kWh/m2/yr) x grid factor 0.551: 150-194 GWh/yr and 82,000-107,000 tCO2/yr, both below the issuer's self-reported 270 GWh / 156,000 tCO2 - the gap is largely the grid factor and the conservative lower-bound method, not evidence of over-report. Physical risk Low (composite 5/100). Screening: partially consistent - build confirmed, but generation/avoided are estimates, not metered output. Panel footprint measured from the OSM plant polygon (way 1105486434) at ~264 ha, +10% vs the disclosed ~240 ha - consistent.",
+    "drivers": [
+      "Build confirmed: Sentinel-1 backscatter +1.2 dB 2019->2024; commissioning 2021 after 2020 financing - additionality consistent",
+      "Generation 150-194 GWh/yr and avoided 82k-107k tCO2/yr (PVWatts + ERA5 GHI 1,869 x grid 0.551) - conservative estimates below self-reported 270 GWh / 156k tCO2",
+      "Physical risk Low (composite 5/100): fire 5, flood 0, degradation 0",
+      "OSM-measured plant footprint ~264 ha (way 1105486434), +10% vs the disclosed ~240 ha - consistent"
+    ],
+    "trace": {
+      "source": "cross_check[] aggregate",
+      "date": "2021-09-15",
+      "method": "Confidence composite",
+      "confidence": "medium",
+      "traces_to": "disclosure"
+    }
+  },
+  "metrics": {
+    "physical_risk": {
+      "fire": {
+        "score": 5,
+        "band": "Low"
+      },
+      "flood": {
+        "score": 0,
+        "band": "Low"
+      },
+      "composite": {
+        "score": 5,
+        "band": "Low"
+      }
+    },
+    "impact": {
+      "generation_gwh": 150,
+      "avoided_emissions_tco2": 82000,
+      "co2_intensity_value": 820,
+      "co2_intensity_unit": "tCO2e/MW/yr",
+      "build_year": 2021,
+      "financing_year": 2020,
+      "additionality_verdict": "consistent"
+    },
+    "environmental_effect": {
+      "vegetation_loss": {
+        "score": 8,
+        "band": "Low"
+      },
+      "composite": {
+        "score": 8,
+        "band": "Low"
+      },
+      "vegetation_change_pct": 8,
+      "deforestation_detected": false,
+      "land_disturbance_ha": 238
+    }
+  },
+  "evidence": [
+    {
+      "id": "nur_navoi_solar_ev_0",
+      "source_name": "Sentinel-2 + Sentinel-1",
+      "source_date": "2021-09-15",
+      "method_id": "build_v1",
+      "confidence": "medium",
+      "limitations": [
+        "confirms build/land-cover change, not generation output",
+        "generation/CO2 figures are a proxy that needs ground truth to certify",
+        "no independent metering"
+      ],
+      "financial_relevance": "Construction footprint and commissioning indicator relevant to use-of-proceeds monitoring.",
+      "supporting_assets": []
+    },
+    {
+      "id": "nur_navoi_solar_ev_1",
+      "source_name": "Esri World Imagery",
+      "source_date": null,
+      "method_id": null,
+      "confidence": null,
+      "limitations": [
+        "high-resolution basemap timelapse for visual context; the basemap refresh date lags real events, so it is not the dated capture each observation was measured from",
+        "shows the build-out to the eye; the measurements come from the Sentinel observation series"
+      ],
+      "financial_relevance": "A dated high-resolution timelapse of the AOI (Esri World Imagery Wayback): visual confirmation of the desert-to-panels build-out alongside the measured evidence.",
+      "supporting_assets": [
+        "aoi_reference_rgb.png",
+        "wayback_2019-06-26_rgb.jpg",
+        "wayback_2021-06-30_rgb.jpg",
+        "wayback_2022-06-29_rgb.jpg",
+        "wayback_2023-06-29_rgb.jpg",
+        "wayback_2024-06-27_rgb.jpg",
+        "wayback_2026-06-30_rgb.jpg"
+      ]
+    }
+  ],
+  "memo_ready": true,
+  "legal_checks": [
+    {
+      "check_type": "ownership",
+      "subject": "Masdar (Nur Navoi Solar FE LLC) / Government of Uzbekistan",
+      "verdict": "partially_consistent",
+      "detail": "Sponsor of record is named in the financing disclosure. Not yet confirmed against a corporate register.",
+      "authority": "Issuer disclosure",
+      "as_of": "2020-12-01",
+      "reference": "nur_navoi_impact_report_2022.pdf#s3",
+      "trace": {
+        "source": "disclosure",
+        "date": "2020-12-01",
+        "method": "Disclosure reading",
+        "confidence": "medium",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "check_type": "permit",
+      "subject": "Construction and operating permits",
+      "verdict": "insufficient_data",
+      "detail": "No permit register is connected, so no independent check has been performed.",
+      "authority": "Uzbekistan national permit register",
+      "trace": {
+        "source": "legal cross-reference",
+        "method": "Register lookup",
+        "confidence": "low",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "check_type": "sanction",
+      "subject": "Sponsor and operating entities",
+      "verdict": "insufficient_data",
+      "detail": "No sanctions screening is connected, so no independent check has been performed.",
+      "authority": "EU consolidated list; OFAC SDN",
+      "trace": {
+        "source": "legal cross-reference",
+        "method": "Sanctions screening",
+        "confidence": "low",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "check_type": "litigation",
+      "subject": "Proceedings naming the project or its operator",
+      "verdict": "insufficient_data",
+      "detail": "No court register is connected, so no independent check has been performed.",
+      "authority": "National court registers",
+      "trace": {
+        "source": "legal cross-reference",
+        "method": "Docket search",
+        "confidence": "low",
+        "traces_to": "disclosure"
+      }
+    }
+  ]
+}

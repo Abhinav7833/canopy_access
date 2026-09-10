@@ -1,0 +1,382 @@
+{
+  "id": "mikoko_pamoja",
+  "name": "Mikoko Pamoja (Mangrove Blue Carbon), Kenya",
+  "asset_type": "mangrove",
+  "country": "Kenya",
+  "financing_type": "carbon_finance",
+  "monitoring_objective": "Verify protection, restoration, and permanence vs the certified project design.",
+  "status": "monitored",
+  "screening_status": "Partially consistent",
+  "aoi_coords": [
+    [
+      39.4948,
+      -4.4252
+    ],
+    [
+      39.5052,
+      -4.4252
+    ],
+    [
+      39.5052,
+      -4.4148
+    ],
+    [
+      39.4948,
+      -4.4148
+    ],
+    [
+      39.4948,
+      -4.4252
+    ]
+  ],
+  "area_hectares": 177.5,
+  "disclosure": {
+    "title": "Mikoko Pamoja: Plan Vivo Blue-Carbon Certification & Impact Claims",
+    "issuer": "Mikoko Pamoja Community Organisation (MPCO), coordinated by ACES",
+    "instrument": "Carbon finance (Plan Vivo-certified credits, use-of-proceeds)",
+    "financing_date": "2013-06-01",
+    "doc_ref": "mikoko_pamoja_plan_vivo_pdd.pdf#s4",
+    "region_hint": "Gazi Bay, Kwale County, Kenya",
+    "summary": "World's first community-led blue-carbon project. Plan Vivo project design promises protection of standing mangrove, active restoration, and permanence of the carbon stock, the outcomes a small community entity must prove to keep issuing credits and unlock finance.",
+    "trace": {
+      "source": "mikoko_pamoja_plan_vivo_pdd.pdf",
+      "date": "2013-06-01",
+      "method": "Document extraction",
+      "confidence": "medium",
+      "traces_to": "disclosure"
+    }
+  },
+  "claims": [
+    {
+      "id": "claim_protected_ha",
+      "kind": "protected_ha",
+      "promised": 117,
+      "unit": "ha",
+      "source_span": "\"...117 hectares of mangrove under protection...\" (PDD p.9)",
+      "trace": {
+        "source": "mikoko_pamoja_plan_vivo_pdd.pdf",
+        "date": "2013-06-01",
+        "method": "Document extraction",
+        "confidence": "high",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "id": "claim_restored_ha",
+      "kind": "restored_ha",
+      "promised": 10,
+      "unit": "ha",
+      "source_span": "\"...approximately 0.4 ha replanted per year toward ~10 ha restoration...\" (PDD p.11)",
+      "trace": {
+        "source": "mikoko_pamoja_plan_vivo_pdd.pdf",
+        "date": "2013-06-01",
+        "method": "Document extraction",
+        "confidence": "medium",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "id": "claim_credits_tco2",
+      "kind": "credits_tco2",
+      "promised": 9880,
+      "unit": "tCO2e",
+      "source_span": "\"...9,880 tCO2e of credits issued over 2014-2018...\" (Plan Vivo registry)",
+      "trace": {
+        "source": "plan_vivo_registry_2018.pdf",
+        "date": "2018-12-31",
+        "method": "Document extraction",
+        "confidence": "medium",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "id": "claim_community_usd",
+      "kind": "community_usd",
+      "promised": 58591,
+      "unit": "USD",
+      "source_span": "\"...US$58,591 directed to community benefit funds...\" (annual report)",
+      "trace": {
+        "source": "mikoko_pamoja_annual_report_2018.pdf",
+        "date": "2018-12-31",
+        "method": "Document extraction",
+        "confidence": "low",
+        "traces_to": "disclosure"
+      }
+    }
+  ],
+  "localization": {
+    "region_hint": "Gazi Bay, Kwale County, Kenya",
+    "located_centroid": [
+      39.5,
+      -4.42
+    ],
+    "confidence": 0.92,
+    "method": "Region hint reconciled with the certified project boundary and Sentinel-2 imagery of the AOI.",
+    "alternatives_rejected": [
+      {
+        "name": "Gazi village mangroves (northern creek)",
+        "reason": "adjacent stand outside the Plan Vivo boundary; different management unit"
+      },
+      {
+        "name": "Makongeni mangroves (eastern Gazi Bay)",
+        "reason": "separate community area, ~4 km east; not covered by this PDD"
+      }
+    ],
+    "trace": {
+      "source": "Region hint, certified project boundary, Sentinel-2 imagery",
+      "date": "2026-07-13",
+      "method": "Boundary reconciliation",
+      "confidence": "medium",
+      "traces_to": "disclosure"
+    },
+    "aoi_assurance": "Digitised footprint from the certified project boundary, not a box drawn round a point.",
+    "has_footprint": true
+  },
+  "observation_series": [
+    {
+      "date": "2019-01-01",
+      "image_key": null,
+      "footprint_ha": 117,
+      "ndvi": 0.404,
+      "note": "Baseline NDVI 0.404 at the start of the 2019-2024 analysis window; dense mangrove, no clearing.",
+      "trace": {
+        "source": "Sentinel-2",
+        "date": "2019-01-01",
+        "method": "NDVI composite",
+        "confidence": "medium",
+        "traces_to": "claim_protected_ha"
+      }
+    },
+    {
+      "date": "2020-06-01",
+      "image_key": null,
+      "footprint_ha": 117,
+      "ndvi": 0.63,
+      "note": "NDVI 0.63 - within the interannual range (std 0.093); mangrove extent stable, no clearing.",
+      "trace": {
+        "source": "Sentinel-2",
+        "date": "2020-06-01",
+        "method": "NDVI composite",
+        "confidence": "medium",
+        "traces_to": "claim_restored_ha"
+      }
+    },
+    {
+      "date": "2024-06-01",
+      "image_key": null,
+      "footprint_ha": 117,
+      "ndvi": 0.476,
+      "note": "NDVI 0.476; 2019-2024 slope -0.012/yr, within interannual variability - no significant change; 0 deforestation vs the ~2.7%/yr regional baseline.",
+      "trace": {
+        "source": "Sentinel-2",
+        "date": "2024-06-01",
+        "method": "NDVI composite",
+        "confidence": "medium",
+        "traces_to": "claim_protected_ha"
+      }
+    }
+  ],
+  "cross_check": [
+    {
+      "claim_id": "claim_protected_ha",
+      "observed": "Canopy extent stable across 2016-2024; about 0% loss vs the ~2.7%/yr regional deforestation baseline.",
+      "status": "consistent",
+      "variance": "~0% loss vs promised 117 ha protected",
+      "evidence_ids": [
+        "mikoko_pamoja_ev_0"
+      ],
+      "trace": {
+        "source": "observation_series[0] vs [2] + evidence mikoko_pamoja_ev_0",
+        "date": "2024-06-01",
+        "method": "NDVI change",
+        "confidence": "medium",
+        "traces_to": "claim_protected_ha"
+      }
+    },
+    {
+      "claim_id": "claim_restored_ha",
+      "observed": "Not resolvable from satellite: ~0.4 ha/yr replanting is below Sentinel-2 resolution. NDVI is flat (slope -0.012/yr, no significant change) and 0 deforestation - permanence verified, but the specific 10 ha restoration cannot be independently confirmed.",
+      "status": "insufficient_data",
+      "variance": "not satellite-resolvable (permanence verified; the 10 ha gain is not measurable from Earth observation)",
+      "evidence_ids": [
+        "mikoko_pamoja_ev_0"
+      ],
+      "trace": {
+        "source": "observation_series[2] + evidence mikoko_pamoja_ev_0",
+        "date": "2024-06-01",
+        "method": "NDVI change",
+        "confidence": "medium",
+        "traces_to": "claim_restored_ha"
+      }
+    },
+    {
+      "claim_id": "claim_credits_tco2",
+      "observed": "Permanence VERIFIED (extent stable 2016-2024, 0 clearing). Our standing-stock estimate ~8,668 tCO2e [2,300-8,800] (AGB, Tier-1) is a DIFFERENT quantity from the 9,880 credited tCO2e (an avoided-deforestation flux) - we verify permanence, not the credit counterfactual.",
+      "status": "partially_consistent",
+      "variance": "consistent (proxy, not MRV-metered)",
+      "evidence_ids": [
+        "mikoko_pamoja_ev_0"
+      ],
+      "trace": {
+        "source": "observation_series[] + evidence mikoko_pamoja_ev_0",
+        "date": "2024-06-01",
+        "method": "Carbon proxy",
+        "confidence": "low",
+        "traces_to": "claim_credits_tco2"
+      }
+    }
+  ],
+  "confidence": {
+    "on_track_pct": 60,
+    "rationale": "Satellite is the sole source. Over 2019-2024 the mangrove NDVI is stable (slope -0.012/yr, within interannual variability; 39% gain / 4% loss, no significant loss) and no deforestation is detected - permanence consistent. Physical risk is Low (composite 5/100): the engine's worst hazard is flood at 0.093 m 100-yr depth (4.6% depth-damage), with fire 4 and degradation 4. Standing-stock carbon is an above-ground-only lower bound of ~8,668 tCO2e (ESA CCI, 28.3 t/ha AGB) over the 177.5 ha analysis AOI; the issuer's 9,880 tCO2e credited is a separate avoided-deforestation flux, not a stock. Screening: partially consistent - no loss observed, but the credit counterfactual is not satellite-measurable. Note: the automated flood proxy may under-rate tidal inundation (disclosed limitation), but the score is reported as the engine computes it, not manually adjusted.",
+    "drivers": [
+      "NDVI stable 2019-2024 (slope -0.012/yr, within noise); 39% gain / 4% loss - no significant loss (Sentinel-2)",
+      "Physical risk Low (composite 5/100): worst hazard flood 0.093 m 100-yr depth -> 4.6% depth-damage (Aqueduct + JRC/Huizinga); fire 4, degradation 4",
+      "Carbon = above-ground-only lower bound ~8,668 tCO2e (ESA CCI, 28.3 t/ha AGB) over the 177.5 ha AOI; distinct from the 9,880 tCO2e credited avoided-deforestation flux",
+      "AOI is a 177.5 ha analysis box, larger than the ~117 ha certified project - read as 'region analysed', not exact footprint"
+    ],
+    "trace": {
+      "source": "cross_check[] aggregate",
+      "date": "2024-06-01",
+      "method": "Confidence composite",
+      "confidence": "medium",
+      "traces_to": "disclosure"
+    }
+  },
+  "metrics": {
+    "physical_risk": {
+      "fire": {
+        "score": 4,
+        "band": "Low"
+      },
+      "flood": {
+        "score": 5,
+        "band": "Low"
+      },
+      "composite": {
+        "score": 5,
+        "band": "Low"
+      }
+    },
+    "impact": {
+      "carbon_stock_tco2": 8668,
+      "carbon_band": "range 2,300-8,800 tCO2e (Tier-1, AGB-only, excludes soil)",
+      "assurance": "Moderate",
+      "co2_intensity_value": 49,
+      "co2_intensity_unit": "tCO2e/ha",
+      "build_year": 2014,
+      "financing_year": 2013,
+      "additionality_verdict": "consistent"
+    },
+    "environmental_effect": {
+      "vegetation_loss": {
+        "score": 4,
+        "band": "Low"
+      },
+      "composite": {
+        "score": 4,
+        "band": "Low"
+      },
+      "vegetation_change_pct": 10,
+      "deforestation_detected": false
+    }
+  },
+  "evidence": [
+    {
+      "id": "mikoko_pamoja_ev_0",
+      "source_name": "Sentinel-2",
+      "source_date": "2024-06-01",
+      "method_id": "ndvi_change_v1",
+      "confidence": "medium",
+      "limitations": [
+        "confirms canopy extent/change, not species composition",
+        "carbon is an NDVI-biomass proxy, not MRV-grade metering",
+        "community-benefit figure is issuer-reported, not satellite-observable"
+      ],
+      "financial_relevance": "Canopy protection and growth indicator relevant to credit-issuance monitoring.",
+      "supporting_assets": []
+    },
+    {
+      "id": "mikoko_pamoja_ev_1",
+      "source_name": "Esri World Imagery",
+      "source_date": null,
+      "method_id": null,
+      "confidence": null,
+      "limitations": [
+        "high-resolution basemap timelapse for visual context; the basemap refresh date lags real events, so it is not the dated capture each observation was measured from",
+        "shows canopy stability to the eye; the NDVI/permanence measurements come from the Sentinel observation series"
+      ],
+      "financial_relevance": "A dated high-resolution timelapse of the AOI (Esri World Imagery Wayback): visual confirmation that the mangrove canopy is stable, with no clearing, alongside the measured evidence.",
+      "supporting_assets": [
+        "aoi_reference_rgb.png",
+        "wayback_2019-06-26_rgb.jpg",
+        "wayback_2020-07-01_rgb.jpg",
+        "wayback_2021-06-30_rgb.jpg",
+        "wayback_2022-06-29_rgb.jpg",
+        "wayback_2023-06-29_rgb.jpg",
+        "wayback_2024-06-27_rgb.jpg"
+      ]
+    }
+  ],
+  "memo_ready": true,
+  "legal_checks": [
+    {
+      "check_type": "ownership",
+      "subject": "Mikoko Pamoja Community Organisation (MPCO), coordinated by ACES",
+      "verdict": "partially_consistent",
+      "detail": "Project entity of record is named in the project design document. Not yet confirmed against a corporate or NGO register.",
+      "authority": "Issuer disclosure",
+      "as_of": "2013-06-01",
+      "reference": "mikoko_pamoja_plan_vivo_pdd.pdf#s4",
+      "trace": {
+        "source": "disclosure",
+        "date": "2013-06-01",
+        "method": "Disclosure reading",
+        "confidence": "medium",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "check_type": "permit",
+      "subject": "Plan Vivo certification (basis for credit issuance)",
+      "verdict": "partially_consistent",
+      "detail": "Certification is asserted in the project design document. Not yet confirmed against the public Plan Vivo registry.",
+      "authority": "Plan Vivo Foundation registry",
+      "as_of": "2013-06-01",
+      "reference": "mikoko_pamoja_plan_vivo_pdd.pdf#s4",
+      "trace": {
+        "source": "disclosure",
+        "date": "2013-06-01",
+        "method": "Disclosure reading",
+        "confidence": "medium",
+        "traces_to": "claim_credits_tco2"
+      }
+    },
+    {
+      "check_type": "sanction",
+      "subject": "Project entity and coordinating organisation",
+      "verdict": "insufficient_data",
+      "detail": "No sanctions screening is connected, so no independent check has been performed.",
+      "authority": "EU consolidated list; OFAC SDN",
+      "trace": {
+        "source": "legal cross-reference",
+        "method": "Sanctions screening",
+        "confidence": "low",
+        "traces_to": "disclosure"
+      }
+    },
+    {
+      "check_type": "litigation",
+      "subject": "Proceedings naming the project or its coordinator",
+      "verdict": "insufficient_data",
+      "detail": "No court register is connected, so no independent check has been performed.",
+      "authority": "National court registers",
+      "trace": {
+        "source": "legal cross-reference",
+        "method": "Docket search",
+        "confidence": "low",
+        "traces_to": "disclosure"
+      }
+    }
+  ]
+}
